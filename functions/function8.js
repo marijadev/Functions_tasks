@@ -1,11 +1,15 @@
-var suma = 0;
+// Write a function that calculates a number of appearances of a given number in a given array.
 
-function odd(p) {
-    for (i = 0; i < p.length; i++) {
-        if (p[i]%2 !== 0) {
-           suma+=p[i];
+function numAppearances(num) {
+    var arr = [5, 4, 67, 33, 4, 15, 4];
+    var buffer = 0;
+
+    for (var i = 0; i < arr.length; i++) {
+        if(arr[i] === num) {
+            buffer ++;
         }
     }
-    return suma;
+    return buffer;
 }
-console.log(odd([1, 3, 2, 4, 8, 7]));
+
+console.log(numAppearances(4));

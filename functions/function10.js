@@ -1,10 +1,18 @@
-function concatenateString(input, num) {
-    var buffer = "";
+// Write a function that calculates the number of appearances of a letter a in a given string. 
+// Modify the function so it calculates the number of both letters a and A.
 
-    for(var i = 0; i < num; i++) {
-        buffer += input;
+function letterAppearLength(input) {
+    var counter = 0;
+
+    for (var i = 0; i < input.length; i++) {
+        if(input[i] === "a" || input[i] === "A") {
+            counter ++;
+            console.log( "Will add to counter.");
+        } else {
+            console.log( "This letter does not appear in this string.");
+        }
     }
-    return buffer
+    return counter;
 }
 
-console.log(concatenateString("abc", 3));
+console.log(letterAppearLength("Marija"));

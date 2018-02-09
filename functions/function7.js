@@ -1,16 +1,14 @@
-console.log('test');
+// Write a function that calculates a number of digits of a given number. 
 
 function numOfDigits(num) {
     var result = 0;
 
-    
     do {
-        result++;
-    console.log(result);
-        
-    } while (num > 10);
+        result ++;
+        num /= 10;
+    } while (parseInt(num) > 0)
 
-    
+    return result;
 }
 
-numOfDigits(1000);
+console.log(numOfDigits(1000));
