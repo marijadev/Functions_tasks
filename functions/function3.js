@@ -1,9 +1,11 @@
-function threeDigitNum(num) {
+// Write a function that checks if a given number is a three digit long number.
 
-    if ((num < 1000 && num > 99) || (num < -99 && num > -1000)) {
-        return true
+function threeDigitLongNum(num) {
+    if((num > 99 && num < 1000) || (num < -99 && num > -1000)) {
+        return "The number " + num + " is a three digit number.";
     } else {
-        return false
+        return "The number " + num + " is not a three digit number.";
     }
-} 
-console.log(threeDigitNum(-222));
+}
+
+console.log(threeDigitLongNum(-665));

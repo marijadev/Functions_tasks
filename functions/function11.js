@@ -1,10 +1,17 @@
-function concatenateString(input, num) {
-    var buffer = "";
+// Write a function to check whether the `input` is a string or not.
 
-    for(var i = 0; i < num; i++) {
-        buffer += input;
+// "My random string" -> true
+// 12 -> false
+
+function stringCheck(input){
+
+    if (typeof input === "string") {
+        console.log("It's a string!");
+    } else {
+        console.log( "Sorry,it'a not a string!");
     }
-    return buffer
+    return stringCheck;
 }
 
-console.log(concatenateString("abc", 3));
+console.log(stringCheck(1565));
+

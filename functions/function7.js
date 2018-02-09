@@ -1,8 +1,16 @@
-function digits(a) {
-    var b = "";
-    b = b + a;
-    return b.length;
+console.log('test');
 
+function numOfDigits(num) {
+    var result = 0;
+
+    
+    do {
+        result++;
+    console.log(result);
+        
+    } while (num > 10);
+
+    
 }
-var c = digits(12345);
-console.log(typeof c, c);
+
+numOfDigits(1000);

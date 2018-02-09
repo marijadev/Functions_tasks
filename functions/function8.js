@@ -1,12 +1,11 @@
-var sum = 0;
+var suma = 0;
 
-function numArr(niz, x) {
-    for (i = 0; i < niz.length; i++) {
-        if (niz[i] === x) {
-            sum += 1;
+function odd(p) {
+    for (i = 0; i < p.length; i++) {
+        if (p[i]%2 !== 0) {
+           suma+=p[i];
         }
     }
-    return sum;
+    return suma;
 }
-
-console.log(numArr([5, 7, 8, 9, 5, 5, 5], 5));
+console.log(odd([1, 3, 2, 4, 8, 7]));

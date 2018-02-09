@@ -1,10 +1,12 @@
-function oddNumber (a) {
-if (a % 2 === 0) {
-        console.log("This number is even.");
-    } else {
-        console.log("This number is odd.");
-    }
+// Write a function that checks if a given number is odd.
 
-    return oddNumber;
-    
-} console.log(oddNumber(4)); 
+function oddNumber(num) {
+    if(num % 2 === 0) {
+        return num + " is an even number.";
+    } else {
+        return num + " is an odd number";
+    }
+}
+
+console.log(oddNumber(-6));
+

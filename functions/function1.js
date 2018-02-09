@@ -1,12 +1,12 @@
-function maxNum(firstNum, secondNum) {
-    
-    if(firstNum > secondNum) {
-        console.log(firstNum + " is bigger than " + secondNum);
-    } else {
-        console.log(secondNum + " is bigger than " + firstNum);
-    }
+// Write a function that calculates the maximum of two given numbers. 
 
-    return maxNum;
+function maxNumber(num1, num2) {
+    if(num1 > num2) {
+        return num1 + " is bigger than " + num2;
+    } else {
+        return num2 + " is bigger than " + num1;
+    }
 }
 
-console.log(maxNum(3, 4));
+console.log(maxNumber(12, -16));
+

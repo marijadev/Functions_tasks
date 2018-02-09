@@ -1,17 +1,18 @@
-// Write a function to check whether the `input` is a string or not.
+// Write a function to check whether a string is blank or not.
 
-// "My random string" -> true
+// "My random string" -> false
+// " " -> true
 // 12 -> false
+// false -> false
 
-function stringCheck(input){
-
-    if (typeof input === "string") {
-        console.log("It's a string!");
+function blankString(input) {
+    if(input === " ") {
+        return true;
     } else {
-        console.log( "Sorry,it'a not a string!");
+        return false;
     }
-    return stringCheck;
 }
 
-console.log(stringCheck(1565));
+console.log(blankString(" "));
+
 

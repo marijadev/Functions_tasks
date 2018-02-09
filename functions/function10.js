@@ -1,13 +1,10 @@
-function letterLength(input) {
-    var counter = 0;
+function concatenateString(input, num) {
+    var buffer = "";
 
-    for (var i = 0; i < input.length; i++) {
-
-        if (input[i] === "h" || input[i] === "y") {
-            counter++;
-        }
+    for(var i = 0; i < num; i++) {
+        buffer += input;
     }
-    return counter;
+    return buffer
 }
 
-console.log(letterLength("Ah random string"));
+console.log(concatenateString("abc", 3));

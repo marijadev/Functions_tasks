@@ -1,11 +1,13 @@
-var suma = 0;
+function letterLength(input) {
+    var counter = 0;
 
-function odd(p) {
-    for (i = 0; i < p.length; i++) {
-        if (p[i]%2 !== 0) {
-           suma+=p[i];
+    for (var i = 0; i < input.length; i++) {
+
+        if (input[i] === "h" || input[i] === "y") {
+            counter++;
         }
     }
-    return suma;
+    return counter;
 }
-console.log(odd([1, 3, 2, 4, 8, 7]));
+
+console.log(letterLength("Ah random string"));
