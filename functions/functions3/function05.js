@@ -5,17 +5,17 @@
 // [7, 9, 0, -2], 2 -> [0, -2]  
 
 function lastElementOfArray(arr, num) {
-    var result = [];
+    var result = [],
+        counter = 0;
 
-    for (var i = arr.length; i >= 0; i--) {
-        do {
-            result = arr[i];
-        } while (parseInt(arr[i]) <= num) {
-
+    for (var i = 0; i < arr.length; i++) {
+        if (i >= arr.length - num) {
+            result[counter] = arr[i];
+            counter++;
         }
-    }
+    }    
+
     return result;
 }
-
 console.log(lastElementOfArray([7, 9, 0, -2], 2));
 
