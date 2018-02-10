@@ -1,16 +1,19 @@
-// 11.  Write a function that converts an array of strings into an array of numbers. Filter out all non-numeric values.
+// 11.  Write a function that converts an array of strings into an array of numbers.
+// Filter out all non-numeric values.
 // ["1", "21", undefined, "42", "1e+3", Infinity] -> [1, 21, 42, 1000]
 
-function arrStrToArrNum(arr) {
-    var arr2 = [];
+function stringArrayToNumberArray(strArray) {
+    var numArray = [];
     var counter = 0;
-    for (var i = 0; i < arr.length; i++) {
-        if (typeof arr[i] === "string") {
-            arr2[counter] = parseFloat(arr[i]);
-            counter += 1;
-        }
+
+    for (var i = 0; i < strArray.length; i++) {
+        var item = strArray[i];
+        if( typeof item !== 'undefined' && item !== Infinity) {
+            numArray[counter] = parseFloat(item);    
+            counter ++; 
+        } 
     }
-        return arr2;
+    return numArray;
 }
 
-console.log(arrStrToArrNum(["1", "21", undefined, "42", "1e+3", Infinity]));
+console.log(stringArrayToNumberArray(["1", "21", undefined, "42", "1e+3", Infinity]));

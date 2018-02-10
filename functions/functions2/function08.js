@@ -9,6 +9,6 @@ function primeNumbers(num) {
     }
 } 
 
-console.log(primeNumbers(7));
+console.log(primeNumbers(77));
 
 

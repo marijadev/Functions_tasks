@@ -2,3 +2,15 @@
 // * * * * *
 // * * *
 // * * * * * * *
+
+function drawThreeValues(val1, val2, val3) {
+    var star = "*";
+    
+
+    for (var i = 0; i < val1.length; i++) {
+        
+    }
+}
+
+console.log(drawThreeValues(3, 1, 5));
+

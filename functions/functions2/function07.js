@@ -1,15 +1,18 @@
-// 7. Write a function to convert string into an array. Space in a string should be represented as “null” in new array.
+// 7. Write a function to convert string into an array. 
+// Space in a string should be represented as “null” in new array.
 
 // "My random string" -> ["M", "y", null, "r", "a"]
 // "Random" -> ["R", "a", "n", "d", "o", "m"]
-
-function stringToArray(input) {
+function stringToArray(str) {
     var arr = [];
 
-    for (let i = 0; i < input.length; i++) {
-        arr[i] = input[i]; 
-    } return arr;
+    for (var i = 0; i < str.length; i++) {
+        if(str[i] === " ") {
+            arr[i] = null;
+        } else {
+            arr[i] = str[i];
+        }
+    } 
+    return arr;
 }
-
-console.log(stringToArray("My random string."));
-
+console.log(stringToArray("My random string"));

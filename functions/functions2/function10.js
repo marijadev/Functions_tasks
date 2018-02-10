@@ -10,5 +10,4 @@ function wordShortening(word, num) {
     result += dots;
     return result;
 }
-
 console.log(wordShortening("Laboratory", 7));
