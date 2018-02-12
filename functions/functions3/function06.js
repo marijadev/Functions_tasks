@@ -1,3 +1,5 @@
+"use strict";
+
 // Write a function to create a specified number of elements with pre-filled numeric value array.
 
 // 6, 0 -> [0, 0, 0, 0, 0, 0]

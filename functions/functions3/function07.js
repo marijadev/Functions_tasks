@@ -1,3 +1,5 @@
+"use strict";
+
 // Write a function that says whether a number is perfect.
 
 // 28 -> 28 is a perfect number.

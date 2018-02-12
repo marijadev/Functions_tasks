@@ -1,3 +1,5 @@
+"use strict";
+
 // Write a program to find the most frequent item of an array.
 
 // [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3]
@@ -8,7 +10,7 @@ function mostFrequentItem(arr) {
         item;
 
     for (var i = 0; i < arr.length; i++) {
-        for (var j = i + 1; j < arr.length; j++) {
+        for (var j = i; j < arr.length; j++) {
             if (arr[i] == arr[j]) {
                 counter++;
             }
@@ -18,13 +20,10 @@ function mostFrequentItem(arr) {
                 item = arr[i];
             }
         }
-
         counter = 0;
     }
-
-    return item;
+    return item + " " + buffer;
 }
-
-console.log(mostFrequentItem([3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3]));
+console.log(mostFrequentItem([3, 'a', 'a', 'a', 2, 3, 'a', 'a', 'a', 2, 4, 9, 3]));
 // mostFrequentItem([1,2,3,2]);
 

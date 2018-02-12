@@ -1,3 +1,5 @@
+"use strict";
+
 // Write a function to hide email address.
 
 // "myemailaddress@bgit.rs" -> "myemail...@bgit.rs"

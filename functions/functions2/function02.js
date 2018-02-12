@@ -1,3 +1,5 @@
+"use strict";
+
 // Write a function to check whether a string is blank or not.
 
 // "My random string" -> false

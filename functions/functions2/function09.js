@@ -1,3 +1,5 @@
+"use strict";
+
 // 9.  Write a function that replaces spaces in a string with provided separator. 
 // If separator is not provided, use “-” (dash) as the default separator.
 

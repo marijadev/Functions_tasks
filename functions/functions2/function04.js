@@ -1,3 +1,5 @@
+"use strict";
+
 // Write a function to count the number of letter occurrences in a string.
 // "My random string", "n" -> 2
 
