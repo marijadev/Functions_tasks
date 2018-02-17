@@ -5,10 +5,6 @@
 // Output: true  | false
 
 function primeNumber(num) {
-    if (num % 3 !== 0 && num % 5 !== 0 && num % 7 !== 0) {
-            return true;
-    } else {
-        return false;
-    }
+    return num % 3 !== 0 && num % 5 !== 0 && num % 7 !== 0;
 }
     console.log(primeNumber(18));

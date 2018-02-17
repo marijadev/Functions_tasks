@@ -3,17 +3,16 @@
 // Input:  [ 3, 500, -10, 149, 53, 414, 1, 19 ]
 // Output: [ 6.5, 255, 20, 79.5, 31.5, 212, 5.5, 14.5 ]
 
-var newArray = function(arr) {
+var newArray = function (arr) {
     var outputArray = [];
-    
+
     for (var i = 0; i < arr.length; i++) {
-        if ( arr[i] === 0 ) {
-            arr[i] = 20;
-        }     
-        outputArray[i] = arr[i] / 2 + 5;   
+        outputArray[i] = arr[i] / 2 + 5;
+        if (outputArray[i] === 0) {
+            outputArray[i] = 20;
+        }
     }
     return outputArray;
 }
 
-console.log(newArray([ 3, 500, -10, 149, 53, 414, 1, 19 ]));
-
+console.log(newArray([3, 500, -10, 149, 53, 414, 1, 19]));
