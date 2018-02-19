@@ -7,18 +7,17 @@
 // "The Quick Brown Fox" -> "tHE qUICK bROWN fOX"
 
 function swapFirstCase(str) {
-    var splitStr = str.split(' ');
+    var splitStr = str.split('');
     var character = splitStr;
+    
     for (var i = 0; i < splitStr.length; i++) {
-       
-        if (character[i] == character.toUpperCase()) {
-            character.toLowerCase;
-
+        if (character[i] !== character[i].toUpperCase()) {
+            character[i].toLowerCase();
         } else {
-            character.toUpperCase();
+            character[i].toUpperCase();
         }
     }
-    return character.join(' ');
+    return character.join('');
 
 }
 
