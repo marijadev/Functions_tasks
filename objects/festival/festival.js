@@ -1,19 +1,14 @@
 "use strict";
 
 (
-    function () {
-
-
+    function() {
+        
         function Genre(name) {
             this.name = name;
 
-            this.getData = function () {
-                var firstLetter = name.charAt(0);
-                var lastLetter = name.charAt(name.length - 1);
-                var result = firstLetter + lastLetter;
-                return result.toUpperCase();
+            this.getData = function() {
+                return (this.name.charAt(0) + this.name.charAt(name.length-1)).toUpperCase(); 
             }
-
         }
 
         function Movie(title, genre, length) {
@@ -22,44 +17,44 @@
             this.length = length;
 
             this.getData = function () {
-                return this.title + ", " + this.genre.getData() + ", " + this.length;
+                return this.title + ", " + this.length + "min, " + genre.getData();
             }
-
         }
 
-        function Program(date, movieList, numOfMovies) {
-            this.date = new Date(date);
-            this.movieList = [];
-            this.numOfMovies = numOfMovies;
+        function Program(date, listOfMovies, totalNumberOfMovies) {
+            this.date = date;
+            this.listOfMovies = [];
+            this.totalNumberOfMovies = totalNumberOfMovies;
 
-            this.getData = function () {
-                return this.title + ", " + this.length + ", " + this.genre.getData();
+            this.addMovie = function(movie) {
+                for (var i = 0; i < this.listOfMovies.length; i++) {
+                    this.listOfMovies.push();                    
+                }
+                return listOfMovies;
             }
-
+            console.log(this.addMovie())
         }
 
-        function Festival(name, listOfPrograms, moviesAll) {
+        function Festival(name, listOfPrograms, numOfMoviesInAllPrograms) {
             this.name = name;
             this.listOfPrograms = [];
-            this.moviesAll = moviesAll;
+            this.numOfMoviesInAllPrograms = numOfMoviesInAllPrograms;
 
-            this.getData = function () {
-                var output="";
-                for(var i=0;i<this.movieList.lengt)
-
-                return this.date + ", " + this.length + ", " + this.genre.getData();
+            this.addProgram = function(program) {
+                for (var i = 0; i < this.listOfPrograms.length; i++) {
+                    this.listOfPrograms.push();                    
+                }
+                return listOfPrograms;
             }
         }
-        var action = new Genre("Action");
 
-        var a = new Movie("Spiderman", action, 123);
-        console.log(a.getData());
+        var action = new Genre("action");
+        var drama = new Genre("drama");
+        var crime = new Genre("crime");
 
+        var movie1 = new Movie("Avengers", action, 139);
+        var movie2 = new Movie("Bron", crime, 45);
+        console.log(movie1.getData());
 
-
-
-
-
-        console.log("Hi");
     }
 )();
