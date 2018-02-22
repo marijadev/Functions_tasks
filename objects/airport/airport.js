@@ -25,7 +25,7 @@
             this.surname = surname;
             this.seat = seat;
 
-            this.getData = function (seat, person) {
+            this.getData = function () {
                 return this.seat.getData() + ", " + this.name + ' ' + this.surname;
             }
         }
@@ -47,9 +47,12 @@
                 this.listOfPassengers.push(passenger);
             }
             this.getPassengersList = function () {
-                for (let i = 0; i < this.listOfPassengers.length; i++) {
-                    return this.listOfPassengers[i].getData();
+                var list = "";
+                for (var i = 0; i < this.listOfPassengers.length; i++) {
+                    list += this.listOfPassengers[i].getData() + "\n";
                 }
+
+                return list;
             }
         }
 
