@@ -33,15 +33,15 @@
         function Flight(relation, date) {
             this.relation = relation;
             this.date = new Date(date);
-            this.year = this.date.getFullYear();
-            this.month = this.date.getMonth();
-            this.day = this.date.getDay();
             this.listOfPassengers = [];
-            this.setDate = function () {
-                return this.day + "." + this.month + "." + this.year + ".";
-            }
             this.getData = function () {
-                return this.date + " " + this.relation;
+                var months = ["Jan", "Feb", "Mar", "Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+                var day = this.date.getDate();
+                var monthIndex = this.date.getMonth();
+                var year = this.date.getFullYear();
+                var formattedDate = day + ", " + months[monthIndex] + ", " + year;
+
+                return formattedDate + " " + this.relation;
             }
             this.addPassenger = function (passenger) {
                 this.listOfPassengers.push(passenger);
@@ -73,8 +73,6 @@
                     info += this.listOfFlights[i].getData() + "\n";
                     info += this.listOfFlights[i].getPassengersList() + "\n";
                 }
-                
-
                 return airportInfo + info;
             }
         }
@@ -103,7 +101,7 @@
 
         var airport1 = new Airport();
 
-        var flight1 = createFlight("Belgrade - Paris", "2018-04-05");
+        var flight1 = createFlight("Belgrade - Paris", "2018-09-05");
         var flight2 = createFlight("Barcelona - Belgrade", "2018-04-12");
 
         flight1.addPassenger(passenger1);
