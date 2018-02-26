@@ -79,6 +79,6 @@
 
         var card1 = new PaymentCard(550, "active", "2018-09-15");
         
-        checkoutAndBuy(sBag, card1);
+        console.log(checkoutAndBuy(sBag, card1));
     }
 )();
