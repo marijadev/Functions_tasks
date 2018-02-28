@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movie List</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>Movie List</h1>
+    <form>
+        <input type="text" id="movie-title" value="" placeholder="Title">
+        <input type="number" id="movie-length" value="" placeholder="Length">
+        <select id="genre-select">
+            <option value="none">-</option>
+            <option value="action">Action</option>
+            <option value="drama">Drama</option>
+        </select>
+       <!-- <button type="submit">Create Movie</button> kupi sve podatke iz cele forme -->
+        <input type="button" id="submit" value="Create movie" name="submit"> <!-- skuplja samo podatke sa jedne forme -->
+        <div class="m-list">
+            
+        </div>
+    </form>
+    <script src="js/form.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+form {
+    padding: 15px;
+    background-color: #ececec;
+    width: 40%;
+}
+
+input {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 5px;
+    color: #272727;
+}
+
+#genre-select {
+    margin-bottom: 20px;
+    width: 100%;
+    border: none;
+    padding: 3px;
+    background-color: #bdb8b8;
+    color: #fff;
+}
+
+input[type="button"] {
+    background-color: #63cc63;
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid rgb(100, 173, 241);
+}
