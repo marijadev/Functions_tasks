@@ -4,7 +4,6 @@
 
     function Genre(name) {
         this.name = name;
-
     }
 
     Genre.prototype.getData = function () {
@@ -18,8 +17,6 @@
         this.title = title;
         this.genreObject = genreObject;
         this.length = length;
-
-
     }
     Movie.prototype.getData = function () {
         return this.title + ", " + this.genreObject.getData() + ", " + this.length + "min.";
@@ -29,8 +26,6 @@
         this.date = new Date(date);
         this.listOfMovies = [];
         this.totalNumMovies = 0;
-
-
     }
     Program.prototype.getData = function () {
         var result = "";
