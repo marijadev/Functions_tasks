@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+}
+
+#form1 {
+    width: 60%;
+}
+
+fieldset {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    background-color: #f4f7f8;
+}
+
+label {
+    display: block;
+}
+
+.label-h {
+    display: block;
+    margin: 10px 0 10px 5%;
+}
+
+input {
+    display: block;
+    margin: 0 auto;
+    padding: 5px;
+    width: 90%;
+    box-sizing: border-box;
+    background-color: #e8eeef;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+input[type="submit"] {
+    display: block;
+    margin: 30px auto;
+    background-color: #ea7b00;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 0;
+    color: #fff;
+    cursor: pointer;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+select {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    padding: 5px 0;
+}

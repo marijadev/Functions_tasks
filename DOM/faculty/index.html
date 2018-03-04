@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Faculty</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form id="form1">
+            <fieldset>
+                <legend>Professor</legend>
+                <label>
+                    <span class="label-h">Name:</span>
+                    <input type="text" placeholder="Name" name="prof-name" id="prof-name">
+                </label>
+                <label>
+                    <span class="label-h">Surname:</span>
+                    <input type="text" placeholder="Surname" name="prof-surname" id="prof-surname">
+                </label>
+                <label>
+                    <span class="label-h">Office:</span>
+                    <input type="text" placeholder="Office" name="office" id="office">
+                </label>
+                <label>
+                    <span class="label-h">Salary:</span>
+                    <input type="number" placeholder="Salary" name="salary" id="salary">
+                </label>
+                <input id="submit-professor" type="submit" id="submit-professor" name="submit-professor" value="Create professor">
+            </fieldset>
+
+            <fieldset>
+                <legend>Student</legend>
+                <label>
+                    <span class="label-h">Name:</span>
+                    <input type="text" placeholder="Name" name="student-name" id="student-name">
+                </label>
+                <label>
+                    <span class="label-h">Surname:</span>
+                    <input type="text" placeholder="Surname" name="student-surname" id="student-surname">
+                </label>
+                <label>
+                    <span class="label-h">Index number:</span>
+                    <input type="number" placeholder="Index number" name="index-number" id="index-number">
+                </label>
+                <label>
+                    <span class="label-h">Student status:</span>
+                    <select name="status" id="student-status">
+                        <option value="">-</option>
+                        <option value="regular">Regular</option>
+                        <option value="remote">Remote</option>
+                        <option value="graduated">Graduated</option>
+                    </select>
+                </label>
+                <input id="submit-student" type="submit" id="submit-student" name="submit-student" value="Create student">
+            </fieldset>
+
+            <fieldset>
+                <legend>Exams</legend>
+                <label>
+                    <span class="label-h">Subjects</span>
+                    <select name="subject" id="subject">
+                        <option value="">-</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="php">PHP</option>
+                        <option value="java">Java</option>
+                        <option value="c">C#</option>
+                    </select>
+                    <span class="label-h">Professor</span>
+                    <select name="professor-select" id="professor-select">
+                        <option value="-">-</option>
+                    </select>
+                    <span class="label-h">Student</span>
+                    <select name="student-select" id="student-select">
+                        <option value="-">-</option>
+                    </select>
+                    <span class="label-h">Date</span>
+                    <input type="date" placeholder="Date" id="date">
+                    <span class="label-h">Grade</span>
+                    <select name="grade-select" id="grade-select">
+                        <option value="">-</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                <input id="submit-exam" type="submit" id="submit-exam" name="submit-exam" value="Evaluate exam">
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Faculty</legend>
+                <label>
+                    <span class="label-h">Name:</span>
+                    <input type="text" placeholder="Name" name="faculty-name" id="faculty-name">
+                </label>
+                <input id="submit-faculty" type="submit" id="submit-faculty" name="submit-faculty" value="Create faculty">
+            </fieldset>
+        </form>
+        <div id="list-holder-right">
+            <ul id="list-right-professors"></ul>
+            <ul id="list-right-students"></ul>
+            <ul id="list-right-exams"></ul>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
