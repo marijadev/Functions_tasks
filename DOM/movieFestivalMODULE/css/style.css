@@ -1,0 +1,51 @@
+
+.container {
+    border: 1px solid rgb(214, 209, 209);
+    padding: 2% 3%;
+    font-family: 'Didact Gothic', sans-serif;
+    font-family: 'Assistant', sans-serif;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+}
+
+h4 {
+    margin: 15px 0;
+    font-weight: 400;
+}
+
+fieldset {
+    border: 1px solid rgb(214, 209, 209);
+    padding: 15px;
+}
+
+input {
+    display: block;
+    width: 100%;
+    border: 1px solid rgb(214, 209, 209);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    margin: 15px 0;
+}
+
+.label-h {
+    display: block;
+    margin: 10px 0;
+}
+
+select {
+    width: 100%;
+    margin: 15px 0;
+    padding: 10px;
+    background-color: rgb(230, 230, 230);
+    border: 1px solid rgba(0,0,0,0.1);
+    color: #222;
+}
