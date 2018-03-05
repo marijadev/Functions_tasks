@@ -1,0 +1,14 @@
+.border{
+    border-bottom: 1px solid green;
+}
+
+.upperCS {
+    text-transform: uppercase;
+}
+.fontColor{
+    color:red; 
+}
+
+.bckgColor {
+    background-color: green;
+}
