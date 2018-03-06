@@ -1,64 +1,64 @@
 "use strict";
 
-
-
-// // global
-// var movieIndex = 0;
-// var movieList = [];
-// var programIndex = 0;
-// var programList = [];
-
-// // DOM elements
-// var movieDiv = document.querySelector(".display-movie");
-// var movieUl = document.createElement("ul");
-// movieDiv.appendChild(movieUl);
-
-// var programDiv = document.querySelector(".display-program");
-// var programUl = document.createElement("ul");
-// programDiv.appendChild(programUl);
-
-// // movie
-// var movieTitleInput = document.querySelector("#movie-title");
-// var movieLengthInput = document.querySelector("#movie-length");
-// var movieGenreSelect = document.querySelector("#movie-genre");
-// var movieSubmitBtn = document.querySelector("#submit-movie");
-
-// // program
-// var programDate = document.querySelector("#program-date");
-// var programSubmitBtn = document.querySelector("#submit-program");
-// var movieToProgramSubmitBtn = document.querySelector("#submit-movie-to-program");
-
-// // dropdown menu for movie and program
-// var movieSelect = document.querySelector("#movie-list");
-// var programSelect = document.querySelector("#program-list");
-
 var dataModule = (function () {
-    var data = { //object containing list of movies
-        indexM: 0,
-        movieList: [] //list of all movies
+    var data = {
+        movieList: [],
+        programList: []
     }
 
-    function Movie(title, length, genre, indexM) {
+    function Movie(title, length, genre) {
         this.title = title;
         this.length = length;
         this.genre = genre;
-        this.indexM = indexM;
     }
-    
+
     Movie.prototype.getData = function () {
         return this.title + ", " + this.length + "min, " + this.genre;
     };
-    
+
     function addMovie(formData) {
-        var movie = new Movie(formData.title, formData.length, formData.genre, data.indexM); //creating new movie object
-        data.movieList.push(movie); //push movie into list of movies
-        data.indexM++;
+        var movie = new Movie(formData.title, formData.length, formData.genre);
+        Object.defineProperty(movie, 'index', { // object, "property"
+            value: data.movieList.length,
+            writable: false
+        });
+        data.movieList.push(movie);
         return movie;
+    }
+
+    function Program(date) {
+        this.date = new Date(date);
+        this.listOfMoviesInProgram = [];
+    }
+
+    Program.prototype.getData = function () {
+        return this.date.getDate() + "." + this.date.getMonth() + "." + this.date.getFullYear() + ".";
+    }
+
+    function addProgram(formData) {
+        var program = new Program(formData.date);
+        Object.defineProperty(program, 'index', { // object, "property"
+            value: data.programList.length,
+            writable: false
+        });
+        data.programList.push(program);
+        return program;
+    }
+
+    function addMovieToProgram(movieIndex, programIndex) {
+        var currentProgram = data.programList[programIndex];
+        var currentMovie = data.movieList[movieIndex];
+        currentProgram.listOfMoviesInProgram.push(currentMovie);
+        console.log(currentProgram)
     }
 
     return {
         createMovie: addMovie,
-        getMovieData: Movie.getData
+        getMovieData: Movie.getData,
+        createProgram: addProgram,
+        getProgramData: Program.getData,
+        programMovieData: data,
+        addMovieToProgramInit: addMovieToProgram
     }
 })();
 
@@ -69,26 +69,51 @@ var uiModule = (function () {
         movieGenreSelect: "#movie-genre",
         movieSubmit: "#submit-movie",
         displayMovie: ".display-movie",
-        movieSelectDrop: "#movie-list"
+        movieSelectDrop: "#movie-list",
+        showMovieLength: ".display-movie-length",
+        submitProgram: "#submit-program",
+        programDate: "#program-date",
+        programSelectDrop: "#program-list",
+        displayProgram: ".display-program",
+        submitMovieToProgram: "#submit-movie-to-program"
     }
 
     function getFormData() {
         var movieTitleInput = document.querySelector(DOMSelectors.movieTitleElement);
         var movieLengthInput = document.querySelector(DOMSelectors.movieLengthElement);
         var movieGenreInput = document.querySelector(DOMSelectors.movieGenreSelect);
+        var programDateInput = document.querySelector(DOMSelectors.programDate);
+        var movieSelectDropInput = document.querySelector(DOMSelectors.movieSelectDrop);
+        var programSelectDropInput = document.querySelector(DOMSelectors.programSelectDrop);
 
         var titleVal = movieTitleInput.value;
         var lengthVal = movieLengthInput.value;
         var genreVal = movieGenreInput.value;
+        var programDateVal = programDateInput.value;
+        var movieSelectDropVal = movieSelectDropInput.value;
+        var programSelectDropVal = programSelectDropInput.value;
 
         //collect input values
-        var getDataObj = {
+        var movieDataObj = {
             title: titleVal,
             length: lengthVal,
             genre: genreVal
         }
 
-        return getDataObj; //return input object
+        var programDataObj = {
+            date: programDateVal
+        }
+
+        var movieToProgramObj = {
+            movieIndex: movieSelectDropVal,
+            programIndex: programSelectDropVal
+        }
+
+        return {
+            getMovieDataObj: movieDataObj,
+            getProgramDataObj: programDataObj,
+            getMovieToProgramObj: movieToProgramObj
+        };
     }
 
     function appendItem(item, htmlElement, parent, index) {
@@ -111,9 +136,24 @@ var uiModule = (function () {
 var ctrlModule = (function (dataModule, uiModule) {
     document.querySelector(uiModule.DOMInputs.movieSubmit).addEventListener("click", function (event) {
         event.preventDefault();
-        var movieObj = dataModule.createMovie(uiModule.formData());
-        uiModule.appendData(movieObj, 'li', document.querySelector(uiModule.DOMInputs.displayMovie), movieObj.indexM);
-        uiModule.appendData(movieObj, 'option', document.querySelector(uiModule.DOMInputs.movieSelectDrop), movieObj.indexM);
-        
+        var movieObj = dataModule.createMovie(uiModule.formData().getMovieDataObj);
+        uiModule.appendData(movieObj, 'li', document.querySelector(uiModule.DOMInputs.displayMovie), movieObj.index);
+        uiModule.appendData(movieObj, 'option', document.querySelector(uiModule.DOMInputs.movieSelectDrop), movieObj.index);
     });
+
+    document.querySelector(uiModule.DOMInputs.submitProgram).addEventListener("click", function (event) {
+        event.preventDefault();
+        var programObj = dataModule.createProgram(uiModule.formData().getProgramDataObj);
+        uiModule.appendData(programObj, 'li', document.querySelector(uiModule.DOMInputs.displayProgram), programObj.index);
+        uiModule.appendData(programObj, 'option', document.querySelector(uiModule.DOMInputs.programSelectDrop), programObj.index);
+    })
+
+    document.querySelector(uiModule.DOMInputs.submitMovieToProgram).addEventListener("click", function (event) {
+        event.preventDefault();
+
+        var movieIndex = uiModule.formData().getMovieToProgramObj.movieIndex;
+        var programIndex = uiModule.formData().getMovieToProgramObj.programIndex;
+
+        dataModule.addMovieToProgramInit(movieIndex, programIndex);
+    })
 })(dataModule, uiModule);

@@ -34,6 +34,7 @@
                 </select>
                 <input type="submit" id="submit-movie" name="submit" value="Create movie">
                 <ul class="display-movie"></ul>
+                <p class="display-movie-length"></p>
             </fieldset>
 
             <h4>Program</h4>
@@ -43,7 +44,11 @@
                     <input type="date" placeholder="dd/mm/yyyy" name="date" id="program-date">
                 </label>
                 <input type="submit" id="submit-program" name="submit" value="Create program">
-                <div class="display-program"></div>
+                <ul class="display-program"></ul>
+            </fieldset>
+
+            <h4>Add movie to program</h4>
+            <fieldset>
                 <h4>Movie</h4>
                 <select name="program" id="movie-list">
                     <option value="-">-</option>
@@ -54,7 +59,6 @@
                 </select>
                 <input type="submit" id="submit-movie-to-program" name="submit" value="Add movie to program">
             </fieldset>
-            <ul class="display-program"></ul>
         </form>
     </div>
     <script src="js/app.js"></script>
