@@ -13,7 +13,7 @@
             this.genre = genre;
             this.length = length;
             this.getData = function () {
-                return this.title + ", " + this.length + "min, " + this.genre.name;
+                return `${this.title}, ${this.length}min, ${this.genre.name}`;
             }
         }
         function Program(date) {
@@ -26,18 +26,20 @@
             }
             this.totalLength = function () {
                 var result = 0;
-                for (var i = 0; i < this.listOfMovies.length; i++) {
+                for (let i = 0; i < this.listOfMovies.length; i++) {
                     result += this.listOfMovies[i].length;
                 }
+                
                 return result;
             }
             this.getData = function () {
-                var moviesData = "";
+                let moviesData = "";
 
                 for (var i = 0; i < this.listOfMovies.length; i++) {
                     moviesData += "\t" + this.listOfMovies[i].getData() + "\n";
                 }
-                return this.date + ", " + this.totalLength() + "min\n" + moviesData;
+
+                return `${this.date}, ${this.totalLength()}min \n${moviesData}` ;
             }
         }
 
@@ -50,10 +52,11 @@
                 this.numberOfMoviesInAllPrograms += program.totalNumberOfMovies;
             }
             this.getData = function() {
-                var festivalInfo =  this.name + " has " + this.numberOfMoviesInAllPrograms + " movie titles\n";
-                var allPrograms = ""; 
+               let festivalInfo =  `${this.name} has ${this.numberOfMoviesInAllPrograms} movie titles
+                `;
+                let allPrograms = ""; 
                 //  festivalInfo + program1.getData() + "\n";
-                for(var i = 0; i < this.listOfPrograms.length; i++){
+                for(let i = 0; i < this.listOfPrograms.length; i++){
                     allPrograms += this.listOfPrograms[i].getData();
                 }
                 return festivalInfo + allPrograms + "\n";
@@ -68,20 +71,18 @@
             return new Program(date);
         }
 
-        var festival1 = new Festival("FEST");
+        let festival1 = new Festival("FEST");
 
-        var action = new Genre("action");
-        var drama = new Genre("drama");
-        var thriller = new Genre("thriller");
+        let action = new Genre("action");
+        let drama = new Genre("drama");
+        let thriller = new Genre("thriller");
 
-        var program1 = createProgram("2018-12-07");
-        var program2 = createProgram("2017-12-03");
+        let program1 = createProgram("2018-12-07");
+        let program2 = createProgram("2017-12-03");
 
-        var movie1 = createMovie("Spiderman", action, 130);
-        var movie2 = createMovie("Split", thriller, 240);
-        var movie3 = createMovie("Twelve Years A Slave", drama, 90);
-
-        // var program1 = new Program("2017-08-12");
+        let movie1 = createMovie("Spiderman", action, 130);
+        let movie2 = createMovie("Split", thriller, 240);
+        let movie3 = createMovie("Twelve Years A Slave", drama, 90);
 
         program1.addMovie(movie1);
         program1.addMovie(movie2);
