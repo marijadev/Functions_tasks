@@ -5,13 +5,38 @@ body {
     min-height: 100vh;
 }
 
+img {
+    max-width: 100%;
+}
+
 #main-nav {
+    position: relative;
     background-color: $main-bckg-color;
     color: $main-color;
 }
 
-    h1 {
-        text-align: center;
+.search-results {
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: $main-color;
+    color: $main-bckg-color;
+    z-index: 10;
+    border: 1px solid rgba(0,0,0,0.3);
+}
+
+.single-show {
+    cursor: pointer;
+}
+
+.form-inline {
+    position: relative;
+    box-sizing: border-box;
+}
+
+ h1 {
+    text-align: center;
 }
 
 footer {

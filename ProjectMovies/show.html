@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
-<body class="main-page">
-
+<body class="single-page">
     <nav id="main-nav" class="navbar justify-content-between">
         <div class="container">
             <a class="navbar-brand">Navbar</a>
@@ -23,11 +22,14 @@
     </nav>
 
     <main class="container">
-        <div class="headline-holder">
-            <h1>Popular Shows</h1>
+        <h1 class="single-show-title"></h1>
+        <div class="row row1">
+            <div class="col-md-6 single-show-img"></div>
+            <div class="col-md-6 single-show-info"></div>
         </div>
-        <div id="main-row" class="row">
-
+        <div class="row row2">
+            <h2>Show details:</h2>
+            <div class="col-12 single-show-details"></div>
         </div>
     </main>
 
@@ -45,6 +47,7 @@
     <script src="./js/data_module.js"></script>
     <script src="./js/ui_module.js"></script>
     <script src="./js/ctrl_module.js"></script>
+    <script src="./js/single_ctrl_module.js"></script>
 </body>
 
 </html>
