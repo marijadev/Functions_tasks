@@ -21,7 +21,7 @@ var ui_module = (() => {
         })
     }
 
-    const appendSingleShow = (currentShow) => {
+    const appendSingleShow = currentShow => {
         const imgHolder = $(".single-show-img");
         const titleHolder = $(".single-show-title");
         const summaryHolder = $(".single-show-details");
@@ -30,10 +30,38 @@ var ui_module = (() => {
         titleHolder.text(`${currentShow.name}`);
         summaryHolder.html(`${currentShow.summary}`);
     }
+
+    const appendCast = crew => {
+        const showCrew = $(".single-show-cast");
+
+        crew.forEach(crewMember => {
+            const showPerson = crewMember.person;
+            const crewHolder = `<li>${showPerson.name}</li>`;
+            
+            showCrew.append(crewHolder);
+        })
+
+    }
+
+    const appendSeason = seasons => {
+        const showSeason = $(".single-show-seasons");
+        const seasonCounter = $(".season-counter");
+
+        seasons.forEach(season => {
+            const showPremiere = season.premiereDate;
+            const showEnd = season.endDate;
+            const seasonHolder = `<li>${showPremiere} - ${showEnd}</li>`;
+
+            showSeason.append(seasonHolder);
+        })
+        seasonCounter.text(seasons.length)
+    }
  
     return {
         landingPageShows,
         appendListShows,
-        appendSingleShow
+        appendSingleShow,
+        appendCast,
+        appendSeason
     }
 })();

@@ -12,8 +12,12 @@ var single_ctrl_module = ((uiModule, dataModule) => {
         })
         $.get(`${dataModule.showAll.url}/${id}/cast`).done(function (response) {
             const currentCrew = dataModule.createCast(response);
-            console.log(currentCrew)
-        })
+            uiModule.appendCast(currentCrew);
+        });
+        $.get(`${dataModule.showAll.url}/${id}/seasons`).done(function (response) {
+            const currentSeason = dataModule.createSeason(response);
+            uiModule.appendSeason(currentSeason);
+        });
     }
 
     return {

@@ -34,7 +34,6 @@ var data_module = (() => {
                 let showName = new Show(show.id, show.name);
                 show10.push(showName);
             }
-            console.log(show10)
         })
 
         return show10
@@ -61,22 +60,35 @@ var data_module = (() => {
     }
 
     class Cast {
-        constructor(person, character) {
+        constructor(person) {
             this.person = person;
-            this.character = character;
         }
     }
     const createCast = cast => {
         let castList = [];
 
         cast.forEach((element, index) => {
-            castList.push(new Cast(element.person, element.character));
+            castList.push(new Cast(element.person));
         });
 
         return castList
     }
 
+    class Season {
+        constructor(premiereDate, endDate) {
+            this.premiereDate = premiereDate;
+            this.endDate = endDate;
+        }
+    }
+    const createSeason = seasons => {
+        const seasonsList = [];
 
+        seasons.forEach(season => {
+            seasonsList.push(new Season(season.premiereDate, season.endDate));
+        })
+
+        return seasonsList;
+    }
     
     return {
         createShows,
@@ -85,7 +97,8 @@ var data_module = (() => {
         addToStorage,
         getSingleShowID,
         createSingleShow,
-        createCast
+        createCast,
+        createSeason
     }
 
 })()
